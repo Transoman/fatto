@@ -1,0 +1,76 @@
+.nav-list
+  margin: 0
+  padding: 0
+  list-style-type: none
+  display: flex
+  li
+    margin-right: 40px
+    &:last-child
+      margin-right: 0
+  a
+    position: relative
+    font-size: 13px
+    // color: #fff
+    text-transform: uppercase
+    &::after
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 0
+      height: 1px
+      background-color: $accent
+      +transition
+      // transform: scaleX(0)
+    &:hover
+      color: $accent
+      &::after
+        width: 100%
+        // transform: scaleX(1)
+
+.nav-toggle
+  display: none
+  position: absolute
+  right: 0
+  top: 17px
+  width: 28px
+  height: 15px
+  padding: 0
+  margin: 0
+  outline: none
+  border: none
+  background: none
+  z-index: 101
+  cursor: pointer
+  +transition
+  &:focus
+    outline: none
+  &__line
+    position: relative
+    display: block
+    height: 2px
+    width: 100%
+    background: $accent
+    +transition
+    &::after, &::before
+      content: ''
+      position: absolute
+      left: 0
+      display: block
+      height: 2px
+      width: 100%
+      background: $accent
+      +transition
+    &::before
+      top: -6px
+    &::after
+      top: 6px
+  &.active
+    .nav-toggle__line
+      background: transparent
+      &::after
+        top: 0
+        transform: rotate(45deg)
+      &::before
+        top: 0
+        transform: rotate(-45deg)
