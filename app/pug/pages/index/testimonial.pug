@@ -1,0 +1,27 @@
+section.s-testimonial
+  .container
+    h2.section-title Нас рекомендуют
+
+    .slider.slider--testimonial.swiper-container
+      .swiper-wrapper
+        .swiper-slide.slider__item
+          .video
+            video(poster="static/images/content/testimonial-poster.jpg").video__player
+              source(src="static/images/content/fatto_new.mp4")
+            .video__title
+              p Интерьер в Котово
+            .video__btn
+              +icon('play-button', 'video__btn-icon')
+        .swiper-slide.slider__item
+          .video
+            video(poster="static/images/content/testimonial-poster.jpg").video__player
+              source(src="static/images/content/fatto_new.mp4")
+            .video__title
+              p Интерьер в Котово
+            .video__btn
+              +icon('play-button', 'video__btn-icon')
+      .slider__btns
+        .swiper-button-prev
+          +icon('arrow-left', 'slider__arrow slider__arrow--left')
+        .swiper-button-next
+          +icon('arrow-right', 'slider__arrow slider__arrow--right')

@@ -36,14 +36,33 @@ jQuery(document).ready(function($) {
   });
 
   $('.video__btn').click(function() {
-    var videoPlayer = $(this).prev();
+    var videoPlayer = $(this).parent().find('.video__player');
     videoPlayer[0].play();
     videoPlayer.prop('controls', true);
+    videoPlayer.parent().addClass('video--play');
     $(this).hide();
   });
 
-  new Swiper('.slider', {
+  new Swiper('.slider--about', {
     slidesPerView: 2,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+  new Swiper('.slider--project', {
+    slidesPerView: 2,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+  new Swiper('.slider--testimonial', {
+    slidesPerView: 1,
     spaceBetween: 30,
     navigation: {
       nextEl: '.swiper-button-next',
