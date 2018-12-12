@@ -5,11 +5,45 @@
   right: 0
   padding: 30px 0
   z-index: 10
+  +transition(1s)
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    height: 4px
+    background-color: $accent
+    opacity: 0
+    visibility: hidden
+    transform: scaleX(0)
+    +transition(1s)
+    z-index: 1
   .container
     display: flex
     justify-content: space-between
   &__nav
     &-one
       padding-top: 50px
+      +transition(1s)
     &-two
       padding-top: 50px
+      +transition(1s)
+  &.fixed
+    padding-top: 40px
+    background-color: rgba(#000, 0.8)
+    &::before
+      opacity: 1
+      visibility: visible
+      transform: scaleX(1)
+    .logo__top
+      height: 0
+      margin: 0
+      opacity: 0
+      visibility: hidden
+    .header
+      &__nav
+        &-one, &-two
+          padding-top: 10px
+    .nav-toggle
+      top: 35px

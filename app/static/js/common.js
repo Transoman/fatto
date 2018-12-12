@@ -7,6 +7,16 @@ jQuery(document).ready(function($) {
     $('.header__nav').toggleClass('open');
   });
 
+  // Fixed header
+  $(window).scroll(function() {
+    if($(this).scrollTop() > 50) {
+      $('.header').addClass('fixed');
+    }
+    else {
+      $('.header').removeClass('fixed');
+    }
+  });
+
   // Modal
   $('.modal').popup({
     transition: 'all 0.3s',
