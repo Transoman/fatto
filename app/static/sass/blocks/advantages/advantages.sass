@@ -1,0 +1,63 @@
+.advantages
+  margin-right: 10px
+  margin-left: 10px
+  padding-top: 110px
+  padding-bottom: 80px
+  background-color: $cod-gray-2
+  color: #fff
+  .section-title
+    margin-bottom: 120px
+  &__list
+    &-item
+      margin-bottom: 50px
+    &-inner
+      position: relative
+      padding-top: 120px
+      p
+        font-size: 18px
+        &:last-child
+          margin-bottom: 0
+    &-icon
+      position: absolute
+      top: 0
+      left: 0
+      +size(70px, 80px)
+      fill: $accent
+  &__address
+    &-item
+      display: flex
+      flex-direction: column
+      margin-bottom: 50px
+    &-img-wrap
+      position: relative
+      max-height: 320px
+      margin-bottom: 45px
+      overflow: hidden
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        background-color: rgba($cod-gray-2, 0.7)
+        +transition
+        opacity: 0
+        visibility: hidden
+      img
+        display: block
+        width: 100%
+      &:hover
+        &::before
+          opacity: 1
+          visibility: visible
+    &-content
+      display: flex
+      flex-direction: column
+      flex-grow: 1
+      h3
+        margin-bottom: 50px
+      p
+        margin-top: auto
+        &:last-child
+        margin-bottom: 0
