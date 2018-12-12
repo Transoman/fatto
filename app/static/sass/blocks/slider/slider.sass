@@ -1,0 +1,57 @@
+.slider
+  &__item
+    &-wrap
+      margin-bottom: 40px
+      overflow: hidden
+      &:last-child
+        margin-bottom: 0
+      &:hover
+        img
+          transform: scale(1.1)
+      img
+        display: block
+        +transition(1.5s)
+  &__btns
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-top: 110px
+  .swiper-button-prev,
+  .swiper-button-next
+    position: static
+    top: auto
+    left: auto
+    right: auto
+    width: 120px
+    height: 27px
+    margin: 0
+    background: none
+    +transition
+    overflow: hidden
+  .swiper-button-prev
+    margin-right: 30px
+  .swiper-button-next
+    &:hover
+      .slider
+        &__arrow
+          fill: $main-color
+          &--right
+            transform: translateX(0)
+  .swiper-button-prev
+    &:hover
+      .slider
+        &__arrow
+          fill: $main-color
+          &--left
+            transform: translateX(0)
+  &__arrow
+    width: 120px
+    height: 20px
+    fill: $accent
+    +transition
+    &--left
+      // margin-right: -70px
+      transform: translateX(70px)
+    &--right
+      // margin-left: -70px
+      transform: translateX(-70px)

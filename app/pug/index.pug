@@ -2,6 +2,8 @@ extends template/main
 
 block variables
   - var title = 'Главная страница'
-  - var pageClass = 'index-page'
+  - var pageClass = ''
 
 block content
+  include pages/index/hero.pug
+  include pages/index/about.pug
