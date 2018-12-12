@@ -1,6 +1,7 @@
 .slider
   &__item
     &-wrap
+      position: relative
       margin-bottom: 40px
       overflow: hidden
       &:last-child
@@ -11,6 +12,15 @@
       img
         display: block
         +transition(1.5s)
+  &__title
+    position: absolute
+    left: 50px
+    bottom: 45px
+    margin: 0
+    font-size: 24px
+    color: #fff
+    line-height: 1.5
+    z-index: 1
   &__btns
     display: flex
     align-items: center
@@ -55,3 +65,16 @@
     &--right
       // margin-left: -70px
       transform: translateX(-70px)
+  &--project
+    .slider__item-wrap
+      position: relative
+      z-index: 1
+      &::before
+        content: ''
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        top: 0
+        background-image: linear-gradient(45deg, $cod-gray 5%, rgba($cod-gray, 0))
+        z-index: 1
