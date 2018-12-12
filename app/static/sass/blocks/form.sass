@@ -1,1 +1,27 @@
-// Form
+.form
+  &-group
+    position: relative
+    margin-bottom: 60px
+    &:last-child
+      // margin-bottom: 0
+  &__field
+    width: 100%
+    padding: 15px 0
+    background: none
+    border: 0
+    background-image: linear-gradient($accent, $accent), linear-gradient($chicago, $chicago)
+    background-position: center bottom
+    background-size: 0 1px, 100% 1px
+    background-repeat: no-repeat
+    font-size: 16px
+    color: #fff
+    +transition
+    &:focus
+      background-size: 100% 1px
+      outline: none
+  &__label
+    position: absolute
+    left: 0
+    top: 15px
+    font-size: 16px
+    color: #fff
