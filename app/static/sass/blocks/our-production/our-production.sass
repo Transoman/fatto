@@ -1,0 +1,53 @@
+.our-production
+  &__list
+    padding: 0 10px
+    &-item
+      position: relative
+      margin-bottom: 10px
+      background:
+        repeat: no-repeat
+        position: center
+        size: cover
+      color: #fff
+      z-index: 1
+      &:last-child
+        margin-bottom: 0
+      &--gray
+        &::before
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          bottom: 0
+          right: 0
+          background: linear-gradient(to right, $shark 40%, rgba($shark, 0))
+          z-index: -1
+      &--brown
+        &::before
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          bottom: 0
+          right: 0
+          background: linear-gradient(to left, $cocoa-brown 40%, rgba($cocoa-brown, 0))
+          z-index: -1
+      &--green
+        &::before
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          bottom: 0
+          right: 0
+          background: linear-gradient(to right, $heavy-metal 40%, rgba($heavy-metal, 0))
+          z-index: -1
+      &:nth-child(odd)
+        text-align: right
+    &-link
+      display: block
+      padding: 80px 360px
+      color: #fff
+    &-title
+      margin: 0
+      font-size: 36px

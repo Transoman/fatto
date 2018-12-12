@@ -35,6 +35,13 @@ jQuery(document).ready(function($) {
     $('body,html').animate({scrollTop: top - 115}, 1000);
   });
 
+  $('.video__btn').click(function() {
+    var videoPlayer = $(this).prev();
+    videoPlayer[0].play();
+    videoPlayer.prop('controls', true);
+    $(this).hide();
+  });
+
   new Swiper('.slider', {
     slidesPerView: 2,
     spaceBetween: 30,
