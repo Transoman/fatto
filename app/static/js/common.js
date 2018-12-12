@@ -25,6 +25,16 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // Scroll to anchor
+  $('.scroll-down').on('click', function (event) {
+    event.preventDefault();
+
+    var id  = $(this).attr('href'),
+    top = $(id).offset().top;
+
+    $('body,html').animate({scrollTop: top - 115}, 1000);
+  });
+
   new Swiper('.slider', {
     slidesPerView: 2,
     spaceBetween: 30,
