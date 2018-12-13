@@ -53,10 +53,8 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // Input Mask
   var inputPhone = document.querySelectorAll('input[type="tel"]');
-
-  console.log(inputPhone);
-
   if (inputPhone.length) {
 
     var maskOptions = {
