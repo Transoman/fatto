@@ -73,6 +73,12 @@ jQuery(document).ready(function($) {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    breakpoints: {
+      767: {
+        slidesPerView: 1,
+        spaceBetween: 30
+      }
+    }
   });
 
   new Swiper('.slider--project', {
@@ -82,6 +88,12 @@ jQuery(document).ready(function($) {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    breakpoints: {
+      767: {
+        slidesPerView: 1,
+        spaceBetween: 30
+      }
+    }
   });
 
   new Swiper('.slider--testimonial', {

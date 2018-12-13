@@ -48,11 +48,18 @@
 .section-title
   margin-bottom: 50px
   line-height: 1.16
+  +r(480)
+    margin-bottom: 30px
 
 .section-content
   margin-bottom: 120px
   column-count: 2
   column-gap: 80px
+  +r(992)
+    column-count: 1
+    column-gap: 0
+  +r(767)
+    margin-bottom: 50px
   p
     margin-bottom: 25px
     &:last-child

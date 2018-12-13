@@ -4,6 +4,12 @@
       position: relative
       margin-bottom: 40px
       overflow: hidden
+      +r(1440)
+        margin-bottom: 30px
+      +r(1200)
+        margin-bottom: 25px
+      +r(992)
+        margin-bottom: 20px
       &:last-child
         margin-bottom: 0
       &:hover
@@ -26,6 +32,8 @@
     align-items: center
     justify-content: center
     margin-top: 110px
+    +r(767)
+      margin-top: 40px
   .swiper-button-prev,
   .swiper-button-next
     position: static
@@ -38,6 +46,8 @@
     background: none
     +transition
     overflow: hidden
+    &:focus
+      outline: none
   .swiper-button-prev
     margin-right: 30px
   .swiper-button-next
@@ -60,10 +70,8 @@
     fill: $accent
     +transition
     &--left
-      // margin-right: -70px
       transform: translateX(70px)
     &--right
-      // margin-left: -70px
       transform: translateX(-70px)
   &--project
     .slider__item-wrap
