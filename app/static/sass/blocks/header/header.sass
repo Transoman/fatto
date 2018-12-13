@@ -6,6 +6,8 @@
   padding: 30px 0
   z-index: 10
   +transition(1s)
+  +r(992)
+    padding: 15px 0
   &::before
     content: ''
     position: absolute
@@ -22,16 +24,24 @@
   .container
     display: flex
     justify-content: space-between
+    +r(992)
+      align-items: center
   &__nav
     &-one
       padding-top: 50px
       +transition(1s)
+      +r(992)
+        display: none
     &-two
       padding-top: 50px
       +transition(1s)
+      +r(992)
+        display: none
   &.fixed
     padding-top: 40px
     background-color: rgba($main-color, 0.8)
+    +r(992)
+      padding: 15px 0
     &::before
       opacity: 1
       visibility: visible
