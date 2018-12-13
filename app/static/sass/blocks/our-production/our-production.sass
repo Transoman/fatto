@@ -23,6 +23,8 @@
           right: 0
           background: linear-gradient(to right, $shark 40%, rgba($shark, 0))
           z-index: -1
+          +r(576)
+            background: linear-gradient(to right, $shark 0, rgba($shark, 0))
       &--brown
         &::before
           content: ''
@@ -33,6 +35,8 @@
           right: 0
           background: linear-gradient(to left, $cocoa-brown 40%, rgba($cocoa-brown, 0))
           z-index: -1
+          +r(576)
+            background: linear-gradient(to left, $cocoa-brown 0, rgba($cocoa-brown, 0))
       &--green
         &::before
           content: ''
@@ -43,12 +47,39 @@
           right: 0
           background: linear-gradient(to right, $heavy-metal 40%, rgba($heavy-metal, 0))
           z-index: -1
+          +r(576)
+            background: linear-gradient(to right, $heavy-metal 0, rgba($heavy-metal, 0))
       &:nth-child(odd)
         text-align: right
+        .our-production
+          &__list-link
+            +r(576)
+              padding-left: 25%
+              padding-right: 10%
     &-link
       display: block
       padding: 80px 360px
       color: #fff
+      +r(1440)
+        padding-right: 200px
+        padding-left: 200px
+      +r(1200)
+        padding-right: 150px
+        padding-left: 150px
+      +r(992)
+        padding-top: 60px
+        padding-bottom: 60px
+      +r(767)
+        padding-right: 10%
+        padding-left: 10%
+      +r(576)
+        padding-bottom: 20px
+        padding-top: 160px
+        padding-right: 25%
     &-title
       margin: 0
       font-size: 36px
+      +r(992)
+        font-size: 26px
+      +r(576)
+        font-size: 20px
