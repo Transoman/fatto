@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
   $('.nav-toggle').on('click', function (e) {
     e.preventDefault();
     $(this).toggleClass('active');
-    $('.header__nav').toggleClass('open');
+    $('.mobile-menu').toggleClass('open');
   });
 
   // Fixed header
