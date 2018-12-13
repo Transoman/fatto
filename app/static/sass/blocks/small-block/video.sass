@@ -42,9 +42,17 @@
     bottom: 50px
     color: #fff
     +transition
+    +r(767)
+      bottom: 20px
+      right: 30px
+      left: 30px
     p
       font-size: 24px
       font-weight: 500
+      +r(767)
+        font-size: 20px
+      +r(480)
+        font-size: 18px
       &:last-child
         margin-bottom: 0
   &--play
