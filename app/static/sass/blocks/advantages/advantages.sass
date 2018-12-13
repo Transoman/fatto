@@ -1,19 +1,25 @@
 .advantages
-  margin-right: 10px
-  margin-left: 10px
   padding-top: 110px
   padding-bottom: 80px
-  background-color: $cod-gray-2
   color: #fff
+  +r(767)
+    padding-top: 50px
+    padding-bottom: 50px
   .section-title
     margin-bottom: 120px
+    +r(576)
+      margin-bottom: 40px
   &__list
     margin-bottom: 70px
+    +r(480)
+      margin-bottom: 0
     &-item
       margin-bottom: 50px
     &-inner
       position: relative
       padding-top: 120px
+      +r(576)
+        padding-top: 105px
       p
         font-size: 18px
         &:last-child
@@ -34,6 +40,8 @@
       max-height: 320px
       margin-bottom: 45px
       overflow: hidden
+      +r(992)
+        margin-bottom: 30px
       &::before
         content: ''
         position: absolute
@@ -58,7 +66,14 @@
       flex-grow: 1
       h3
         margin-bottom: 50px
+        +r(992)
+          margin-bottom: 30px
+        +r(480)
+          margin-bottom: 10px
       p
         margin-top: auto
         &:last-child
         margin-bottom: 0
+        +r(480)
+          br
+            display: none
