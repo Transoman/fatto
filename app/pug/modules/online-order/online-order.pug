@@ -2,22 +2,37 @@ section.online-order.section-dark
   .container
     h2.section-title Форма просчета стоимости и размещения онлайн-заказа
     .online-order__form-wrap
-    form.form.online-order__form.row
-      .col-md-6
-        .form-group
-          .form__label Имя*
-          input.form__field
-        .form-group
-          .form__label Телефон*
-          input.form__field
-      .col-md-6
-        .form-group
-          .form__label E-mail*
-          input.form__field
-        .form-group
-          .form__label Адрес доставки*
-          input.form__field
-      .col-md-12
-        .form-group
-          .form__label E-mail*
-          textarea.form__field.form__field--textarea
+      form.form.online-order__form.row
+        .col-md-6
+          .form-group
+            label(for="order-name").form__label Имя*
+            input(type="text", name="name", required).form__field#order-name
+          .form-group
+            label(for="order-phone").form__label Телефон*
+            input(type="tel", name="phone", required).form__field#order-phone
+        .col-md-6
+          .form-group
+            label(for="order-email").form__label E-mail*
+            input(type="email", name="email", required).form__field#order-email
+          .form-group
+            label(for="order-address").form__label Адрес доставки*
+            input(type="text", name="address", required).form__field#order-address
+        .col-md-12
+          .form-group
+            label(for="order-desc").form__label Описание*
+            textarea(name="desc", required).form__field.form__field--textarea#order-desc
+        .col-md-12
+          .form__wrapp
+            .form-group
+              label(for="order-code").form__label.form__label--code Проверочный код*
+              .form__validate-code
+                input(type="text", name="validate_code", required).form__code#order-code
+                img(src="static/images/content/code.jpg", alt="")
+            .form-group
+              input(type="file", name="file").form__file#order-file
+              label(for="order-file").form__label.form__label--file
+                +icon('clip', 'form__file-icon')
+                span Прикрепить файл
+            .form-group
+              input(type="submit", value="Отправить").form__btn.btn
+      p.online-order__note Поля со* - обязательны для заполнения

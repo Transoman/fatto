@@ -43,6 +43,31 @@ jQuery(document).ready(function($) {
     $(this).hide();
   });
 
+  $('.form__field').focus(function() {
+    $(this).prev('.form__label').addClass('is-active');
+  });
+
+  $('.form__field, .form__field--textarea').focusout(function() {
+    if ($(this).val() == '') {
+      $(this).prev('.form__label').removeClass('is-active');
+    }
+  });
+
+  var inputPhone = document.querySelectorAll('input[type="tel"]');
+
+  console.log(inputPhone);
+
+  if (inputPhone.length) {
+
+    var maskOptions = {
+      mask: '+{7} (000) 000-00-00'
+    };
+
+    for(var i = 0; i < inputPhone.length; i++) {
+      new IMask(inputPhone[i], maskOptions);
+    }
+  }
+
   new Swiper('.slider--about', {
     slidesPerView: 2,
     spaceBetween: 30,
@@ -80,5 +105,48 @@ jQuery(document).ready(function($) {
       prevEl: '.swiper-button-prev',
     },
   });
+
+  // Validation form
+  jQuery.validator.addMethod("phoneno", function(phone_number, element) {
+    return this.optional(element) || phone_number.match(/\+[0-9]{1}\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}/);
+  }, "Введите Ваш телефон");
+  
+  /* Валидация формы */
+  $(".online-order__form").validate({
+    messages: {
+      name: "Введите Ваше имя",
+      phone: "Введите Ваш телефон",
+      email: "Введите Ваш E-mail",
+      address: "Введите Ваш адрес доставки",
+      desc: "Введите Ваше описание",
+      validate_code: "Введите Проверочный код",
+    },
+    rules: {
+      "phone": {
+        required: true,
+        phoneno: true
+      }
+    },
+    submitHandler: function(form) {
+      var t = $('.online-order__form').serialize();
+      ajaxSend('.online-order__form', t);
+    }
+  });
+  
+  /* Функцыя для отправки формы */
+  function ajaxSend(formName, data) {
+    jQuery.ajax({
+      type: "POST",
+      url: "sendmail.php",
+      data: data,
+      success: function() {
+        $(".modal").popup("hide");
+        $("#thanks").popup("show");
+        setTimeout(function() {
+          $(formName).trigger('reset');
+        }, 2000);
+      }
+    });
+  }
 
 });
