@@ -17,6 +17,8 @@
   text-align: center
   cursor: pointer
   +transition
+  +r(480)
+    bottom: 50px
   &:hover
     border-color: rgba(#fff, 0.5)
   &:focus
@@ -77,6 +79,15 @@
   font-size: 12px
   text-transform: uppercase
   text-align: center
+  +r(1440)
+    margin-right: 110px
+  +r(1200)
+    order: 1
+    width: 100%
+    margin-right: 0
+    margin-top: 50px
+  +r(992)
+    margin-top: 30px
 
 .phone
   & > *:not(:last-child)
