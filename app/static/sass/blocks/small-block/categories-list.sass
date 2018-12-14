@@ -5,6 +5,8 @@
   display: flex
   flex-wrap: wrap
   margin-bottom: 100px
+  +r(480)
+    margin-bottom: 60px
   li
     margin-bottom: 20px
     &::after
@@ -15,11 +17,15 @@
       margin: 0 20px
       border-radius: 50%
       background-color: $accent
+      +r(480)
+        margin: 0 10px
     &:last-child
       &::after
         display: none
   a
     font-size: 16px
     color: inherit
+    +r(480)
+      font-size: 13px
     &:hover, &:focus
       color: $accent
