@@ -44,6 +44,7 @@ jQuery(document).ready(function($) {
     $(this).hide();
   });
 
+  // Focus input effect
   $('.form__field').focus(function() {
     $(this).prev('.form__label').addClass('is-active');
   });
@@ -53,6 +54,14 @@ jQuery(document).ready(function($) {
       $(this).prev('.form__label').removeClass('is-active');
     }
   });
+
+  // Masonry
+  // $('.catalog-list').masonry({
+  //   itemSelector: '.catalog-list__item',
+  //   columnWidth: '.grid-sizer',
+  //   percentPosition: true,
+  //   gutter: '.gutter-sizer'
+  // });
 
   // Input Mask
   var inputPhone = document.querySelectorAll('input[type="tel"]');
