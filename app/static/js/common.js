@@ -30,9 +30,10 @@ jQuery(document).ready(function($) {
     event.preventDefault();
 
     var id  = $(this).attr('href'),
+    offset = $(window).width() < 1025 ? 80 : 115,
     top = $(id).offset().top;
 
-    $('body,html').animate({scrollTop: top - 115}, 1000);
+    $('body,html').animate({scrollTop: top - offset}, 1000);
   });
 
   $('.video__btn').click(function() {
