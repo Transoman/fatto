@@ -29,7 +29,7 @@ module.exports = function () {
             .on('end', $.browserSync.reload);
     });
     $.gulp.task('styles:build', () => {
-        return $.gulp.src(stylesPATH.input + 'styles.scss')
+        return $.gulp.src(stylesPATH.input + 'style.sass')
             .pipe(gp.sass())
             .pipe(gp.postcss([
                 autoprefixer({
@@ -41,7 +41,7 @@ module.exports = function () {
             .pipe($.gulp.dest(stylesPATH.ouput))
     });
     $.gulp.task('styles:build-min', () => {
-        return $.gulp.src(stylesPATH.input + 'styles.scss')
+        return $.gulp.src(stylesPATH.input + 'style.sass')
             .pipe(gp.sass())
             .pipe(gp.postcss([
                 autoprefixer({
@@ -51,7 +51,7 @@ module.exports = function () {
             ]))
             .pipe(gp.csscomb())
             .pipe(gp.csso())
-            .pipe(gp.rename('style.min.css'))
+            .pipe(gp.rename('styles.min.css'))
             .pipe($.gulp.dest(stylesPATH.ouput))
     });
 };
