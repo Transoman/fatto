@@ -7,22 +7,27 @@
   &__slider
     margin-bottom: 70px
     &-item
-      // position: relative
-      // overflow: hidden
-      // padding-top: 35%
       img
-        // position: absolute
-        // top: 0
-        // left: 0
         width: 100%
-        // height: auto
-        // max-width: none
-
   &__info
     display: flex
     margin-bottom: 145px
+    +r(1200)
+      flex-direction: column
+      margin-bottom: 100px
+    +r(480)
+      margin-bottom: 60px
     &-text
       margin-right: 200px
+      +r(1440)
+        margin-right: 80px
+      +r(1200)
+        margin-right: 0
+        margin-bottom: 40px
+      p
+        +r(767)
+          br
+            display: none
     &-phone
       p
         margin: 0
