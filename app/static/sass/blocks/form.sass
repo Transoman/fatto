@@ -2,6 +2,8 @@
   &-group
     position: relative
     margin-bottom: 60px
+    +r(767)
+      margin-bottom: 30px
     &:last-child
       // margin-bottom: 0
   &__field
@@ -35,6 +37,8 @@
       left: auto
       top: auto
       margin-right: 50px
+      +r(1200)
+        margin-right: 20px
     &.is-active
       top: 0
       font-size: 12px
@@ -46,11 +50,22 @@
       margin: 0
       padding: 27px 70px 27px 50px
       background-color: $cod-gray-3
+      +r(1200)
+        padding-right: 30px
+        padding-left: 30px
+      +r(480)
+        width: 100%
+        text-align: center
   &__wrapp
     display: flex
+    +r(992)
+      flex-wrap: wrap
     .form-group
       flex-shrink: 0
       margin-right: 30px
+      +r(480)
+        width: 100%
+        margin-right: 0
       &:last-child
         flex-grow: 1
         margin-right: 0
@@ -62,12 +77,18 @@
     border: 1px solid $tuatara
     font-size: 16px
     color: #fff
+    +r(1200)
+      margin-right: 0
+    +r(480)
+      width: 100%
     &:focus
       outline: none
   &__validate-code
     display: inline-flex
     flex-direction: column
     align-items: flex-start
+    +r(480)
+      width: 100%
     & > *:not(:last-child)
       margin-bottom: 5px
   &__file
