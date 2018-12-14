@@ -4,16 +4,8 @@
   list-style-type: none
   display: flex
   li
-    margin-right: 40px
-    &:last-child
-      margin-right: 0
-    +r(1200)
-      margin-right: 20px
-  a
     position: relative
-    font-size: 13px
-    color: #fff
-    text-transform: uppercase
+    margin-right: 40px
     &::after
       content: ''
       position: absolute
@@ -23,10 +15,21 @@
       height: 1px
       background-color: $accent
       +transition
+    &:last-child
+      margin-right: 0
+    +r(1200)
+      margin-right: 20px
     &:hover
-      color: $accent
+      a
+        color: $accent
       &::after
         width: 100%
+  a
+    font-size: 13px
+    color: #fff
+    text-transform: uppercase
+   
+    
 
 .nav-toggle
   position: fixed
