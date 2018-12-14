@@ -3,6 +3,13 @@
   padding-bottom: 190px
   +r(767)
     padding: 50px 0
+  &__content
+    +r(992)
+      margin-bottom: 50px
+    p
+      +r(1200)
+        br
+          display: none
   &__form
     & > *:not(:last-child)
         margin-bottom: 30px
@@ -11,9 +18,14 @@
       color: $main-color
     .form__field
       color: $main-color
+    .form-group--btn
+      +r(576)
+        text-align: center
     .form__btn
       float: right
       max-width: 240px
       padding-top: 21px
       padding-bottom: 21px
       font-size: 18px
+      +r(576)
+        float: none

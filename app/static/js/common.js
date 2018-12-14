@@ -158,6 +158,22 @@ jQuery(document).ready(function($) {
       ajaxSend('.online-order__form', t);
     }
   });
+
+  $(".download__form").validate({
+    messages: {
+      email: "Введите Ваш E-mail",
+    },
+    rules: {
+      "phone": {
+        required: true,
+        phoneno: true
+      }
+    },
+    submitHandler: function(form) {
+      var t = $('.download__form').serialize();
+      ajaxSend('.download__form', t);
+    }
+  });
   
   /* Функцыя для отправки формы */
   function ajaxSend(formName, data) {
