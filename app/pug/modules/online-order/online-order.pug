@@ -17,6 +17,21 @@ section.online-order.section-dark
           .form-group
             label(for="order-address").form__label Адрес доставки*
             input(type="text", name="address", required).form__field#order-address
+        if sizes
+          .col-md-12
+            .row
+              .col-md-4
+                .form-group
+                  label(for="order-width").form__label Ширина*
+                  input(type="text", name="width", required).form__field#order-width
+              .col-md-4
+                .form-group
+                  label(for="order-height").form__label Высота*
+                  input(type="text", name="height", required).form__field#order-height
+              .col-md-4
+                .form-group
+                  label(for="order-depth").form__label Глубина*
+                  input(type="text", name="depth", required).form__field#order-depth
         .col-md-12
           .form-group
             label(for="order-desc").form__label Описание*
