@@ -13,12 +13,20 @@
       justify-content: space-between
     +r(992)
       flex-direction: column
-      // justify-content: center
   &__social
     margin-right: 30px
+    justify-content: center
     +r(992)
       margin-right: 0
       margin-bottom: 30px
+    +r(576)
+      flex-direction: column
+      text-align: center
+      li
+        margin-right: 0
+        margin-bottom: 10px
+        &:last-child
+            margin-bottom: 0
   &__phone
     +r(480)
       display: flex
