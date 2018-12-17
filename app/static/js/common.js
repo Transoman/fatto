@@ -135,6 +135,64 @@ jQuery(document).ready(function($) {
     }
   });
 
+  new Swiper('.product-gallery__thumbnails', {
+    slidesPerView: 5,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 20
+      },
+      992: {
+        slidesPerView: 5,
+        spaceBetween: 20
+      },
+      767: {
+        slidesPerView: 4,
+        spaceBetween: 20
+      },
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      },
+      400: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      }
+    }
+  });
+
+  // Change product image
+  $('.product-gallery__thumbnails img').click(function(){
+    var large = $(this).data('large_image');
+    var medium = $(this).data('medium_image');
+    $('.product-gallery__img img').fadeOut(300, changeImg(medium, large, $('.product-gallery__img img')));
+  });
+
+  function changeImg(medium, large, element){
+    var element = element;
+    var large = large;
+    var medium = medium;
+    setTimeout(function(){ tdZoomFade()},300);
+    function tdZoomFade(){
+        element.attr('src', medium)
+        element.attr('data-large_image', large)
+        element.attr('data-medium_image', medium)
+        // element.attr('srcset', large)
+        element.parent().attr('href', large)
+        element.fadeIn(300);
+    }
+    // var zoomType = $('.product-gallery__img').data('zoomstyle');
+    // if(zoomType !='default'){
+    //     var ez = $('.product-gallery__img img').data('elevateZoom');
+    //     ez.swaptheimage(large, large);
+    // }
+  }
+
   // Validation form
   jQuery.validator.addMethod("phoneno", function(phone_number, element) {
     return this.optional(element) || phone_number.match(/\+[0-9]{1}\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}/);

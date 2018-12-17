@@ -1,0 +1,37 @@
+.product-gallery
+  +r(992)
+    margin-bottom: 50px
+  &__img
+    margin-bottom: 20px
+    text-align: center
+  &__thumbnails
+    margin: 0 -10px
+    padding: 0 10px
+    .swiper-button-prev,
+    .swiper-button-next
+      width: 42px
+      height: 26px
+      margin-top: -13px
+      background: none
+      +transition
+      &:focus
+        outline: none
+    .swiper-button-prev
+      left: 15px
+      transform: rotate(180deg)
+    .swiper-button-next
+      right: 15px
+      &:hover
+        transform: translateX(15px)
+    .swiper-button-prev
+      &:hover
+        transform: translateX(-15px) rotate(180deg)
+    &-item
+      cursor: pointer
+      img
+        display: block
+        width: 100%
+    &-icon
+      width: 42px
+      height: 10px
+      fill: $accent

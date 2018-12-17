@@ -99,9 +99,10 @@ section
   transition: all .25s ease
   &:hover
     background-color: lighten($accent, 5%)
+    color: $main-color
   &:active
     background-color: darken($accent, 5%)
-    color: rgba(255,255,255,.3)
+    color: $main-color
   &[disabled]
     background-color: #e5e5e5
     cursor: not-allowed

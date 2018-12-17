@@ -1,0 +1,11 @@
+extends template/main
+
+block variables
+  - var title = 'Шкаф распашной'
+  - var pageClass = ''
+
+block content
+  include pages/catalog/hero.pug
+  include pages/product/product.pug
+  include pages/product/scheme.pug
+  include modules/online-order/online-order.pug

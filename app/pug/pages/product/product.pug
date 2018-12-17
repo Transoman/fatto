@@ -1,0 +1,46 @@
+section.product
+  .container
+    .product__top
+      a(href="#").product__top-link.product__top-link--prev
+        +icon('arrow-small-right', 'product__top-link-icon')
+        | Предыдущий образец
+      a(href="#").product__top-link.product__top-link--next Следующий образец
+        +icon('arrow-small-right', 'product__top-link-icon')
+
+    .product__wrap.row
+      .col-lg-6
+        .product-gallery
+          .product-gallery__img
+            a(href="static/images/content/product-1.jpg", data-fancybox)
+              img(src="static/images/content/product-md-1.jpg", alt="")
+          .product-gallery__thumbnails.swiper-container
+            .swiper-wrapper
+              .product-gallery__thumbnails-item.swiper-slide
+                img(src="static/images/content/product-sm-1.jpg", alt="", data-large_image="static/images/content/product-1.jpg", data-medium_image="static/images/content/product-md-1.jpg")
+              .product-gallery__thumbnails-item.swiper-slide
+                img(src="static/images/content/product-sm-2.jpg", alt="", data-large_image="static/images/content/product-md-2.jpg", data-medium_image="static/images/content/product-md-2.jpg")
+              .product-gallery__thumbnails-item.swiper-slide
+                img(src="static/images/content/product-sm-3.jpg", alt="", data-large_image="static/images/content/product-md-3.jpg", data-medium_image="static/images/content/product-md-3.jpg")
+              .product-gallery__thumbnails-item.swiper-slide
+                img(src="static/images/content/product-sm-4.jpg", alt="", data-large_image="static/images/content/product-md-4.jpg", data-medium_image="static/images/content/product-md-4.jpg")
+              .product-gallery__thumbnails-item.swiper-slide
+                img(src="static/images/content/product-sm-5.jpg", alt="", data-large_image="static/images/content/product-md-5.jpg", data-medium_image="static/images/content/product-md-5.jpg")
+              .product-gallery__thumbnails-item.swiper-slide
+                img(src="static/images/content/product-sm-5.jpg", alt="", data-large_image="static/images/content/product-md-5.jpg", data-medium_image="static/images/content/product-md-5.jpg")
+            .swiper-button-prev
+              +icon('arrow-small-right', 'product-gallery__thumbnails-icon')
+            .swiper-button-next
+              +icon('arrow-small-right', 'product-gallery__thumbnails-icon')
+
+      .col-lg-6
+        .product__content
+          h1.product__title Шкаф <br>распашной
+
+          .product__meta
+            p.product__meta-title Возможные материалы изготовления
+            .product__meta-content
+              p МДФ крашенный / массив ольхи, дуба, ясеня
+
+          .product__bottom
+            a(href="#").btn.btn--transp Узнать стоимость под необходимые размеры
+            a(href="#").btn Заказать
