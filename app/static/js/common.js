@@ -36,6 +36,16 @@ jQuery(document).ready(function($) {
     $('body,html').animate({scrollTop: top - offset}, 1000);
   });
 
+  $('.product__bottom a').on('click', function (event) {
+    event.preventDefault();
+
+    var id  = $(this).attr('href'),
+    offset = $(window).width() < 1025 ? 80 : 115,
+    top = $(id).offset().top;
+
+    $('body,html').animate({scrollTop: top - offset}, 1000);
+  });
+
   $('.video__btn').click(function() {
     var videoPlayer = $(this).parent().find('.video__player');
     videoPlayer[0].play();
@@ -182,21 +192,35 @@ jQuery(document).ready(function($) {
         element.attr('src', medium)
         element.attr('data-large_image', large)
         element.attr('data-medium_image', medium)
-        // element.attr('srcset', large)
         element.parent().attr('href', large)
         element.fadeIn(300);
     }
-    // var zoomType = $('.product-gallery__img').data('zoomstyle');
-    // if(zoomType !='default'){
-    //     var ez = $('.product-gallery__img img').data('elevateZoom');
-    //     ez.swaptheimage(large, large);
-    // }
   }
 
   // Validation form
   jQuery.validator.addMethod("phoneno", function(phone_number, element) {
     return this.optional(element) || phone_number.match(/\+[0-9]{1}\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}/);
   }, "Введите Ваш телефон");
+
+  $.extend( $.validator.messages, {
+    required: "Это поле необходимо заполнить",
+    remote: "Пожалуйста, введите правильное значение.",
+    email: "Пожалуйста, введите корректный адрес электронной почты.",
+    url: "Пожалуйста, введите корректный URL.",
+    date: "Пожалуйста, введите корректную дату.",
+    dateISO: "Пожалуйста, введите корректную дату в формате ISO.",
+    number: "Пожалуйста, введите число.",
+    digits: "Пожалуйста, вводите только цифры.",
+    creditcard: "Пожалуйста, введите правильный номер кредитной карты.",
+    equalTo: "Пожалуйста, введите такое же значение ещё раз.",
+    extension: "Пожалуйста, выберите файл с правильным расширением.",
+    maxlength: $.validator.format( "Пожалуйста, введите не больше {0} символов." ),
+    minlength: $.validator.format( "Пожалуйста, введите не меньше {0} символов." ),
+    rangelength: $.validator.format( "Пожалуйста, введите значение длиной от {0} до {1} символов." ),
+    range: $.validator.format( "Пожалуйста, введите число от {0} до {1}." ),
+    max: $.validator.format( "Пожалуйста, введите число, меньшее или равное {0}." ),
+    min: $.validator.format( "Пожалуйста, введите число, большее или равное {0}." )
+  } );
   
   /* Валидация формы */
   $(".online-order__form").validate({
