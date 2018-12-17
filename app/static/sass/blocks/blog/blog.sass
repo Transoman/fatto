@@ -1,0 +1,43 @@
+.blog
+  padding-top: 135px
+  padding-bottom: 180px
+  +r(1200)
+    padding-bottom: 100px
+  +r(767)
+    padding: 50px 0
+  .section-title
+    margin-bottom: 130px
+    font-size: 36px
+    +r(992)
+      margin-bottom: 90px
+    +r(480)
+      margin-bottom: 60px
+      font-size: 26px
+
+.blog-list
+  &__item
+    margin-bottom: 100px
+    +r(767)
+      margin-bottom: 60px
+    p
+      margin-bottom: 25px
+      +r(767)
+        margin-bottom: 20px
+  &__title
+    margin-bottom: 50px
+    font-family: $main-font
+    font-weight: 500
+    font-size: 24px
+    line-height: 1.5
+    +r(767)
+      font-size: 20px
+      margin-bottom: 25px
+    a
+      color: inherit
+      &:hover, &:focus
+        color: $accent
+  &__read-more
+    font-size: 12px
+    font-weight: 500
+    color: $accent
+    text-decoration: underline

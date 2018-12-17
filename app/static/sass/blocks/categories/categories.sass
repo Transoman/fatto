@@ -27,6 +27,9 @@
     color: $natural-gray
     text-transform: uppercase
     vertical-align: middle
+    &:hover
+      .categories__link-back-icon
+        transform: translateX(10px)
     +r(480)
       margin-top: 10px
     &-icon
@@ -34,5 +37,6 @@
       fill: $accent
       vertical-align: baseline
       margin-left: 30px
+      +transition
       +r(480)
         margin-left: 10px

@@ -1,0 +1,11 @@
+extends template/main
+
+block variables
+  - var title = 'Блог'
+  - var pageClass = ''
+
+block content
+  include pages/catalog/hero.pug
+  include pages/blog/blog.pug
+  
+  include modules/online-order/online-order.pug
