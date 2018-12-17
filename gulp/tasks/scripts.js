@@ -16,7 +16,8 @@ module.exports = function () {
             'node_modules/swiper/dist/js/swiper.min.js',
             'node_modules/imask/dist/imask.min.js',
             'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
-            'node_modules/masonry-layout/dist/masonry.pkgd.min.js'
+            'node_modules/masonry-layout/dist/masonry.pkgd.min.js',
+            'node_modules/imagesloaded/imagesloaded.pkgd.min.js'
             ])
             .pipe(gp.concat('libs.min.js'))
             .pipe($.gulp.dest(scriptsPATH.ouput));
@@ -31,7 +32,8 @@ module.exports = function () {
             'node_modules/swiper/dist/js/swiper.min.js',
             'node_modules/imask/dist/imask.min.js',
             'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
-            'node_modules/masonry-layout/dist/masonry.pkgd.min.js'
+            'node_modules/masonry-layout/dist/masonry.pkgd.min.js',
+            'node_modules/imagesloaded/imagesloaded.pkgd.min.js'
             ])
             .pipe(gp.concat('libs.min.js'))
             .pipe(gp.uglify())

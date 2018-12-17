@@ -56,12 +56,15 @@ jQuery(document).ready(function($) {
   });
 
   // Masonry
-  // $('.catalog-list').masonry({
-  //   itemSelector: '.catalog-list__item',
-  //   columnWidth: '.grid-sizer',
-  //   percentPosition: true,
-  //   gutter: '.gutter-sizer'
-  // });
+  var grid = $('.categories-items .row').masonry({
+    itemSelector: '.categories-items__item',
+    columnWidth: '.categories-items__item:last-child',
+    percentPosition: true
+  });
+
+  grid.imagesLoaded().progress( function() {
+    grid.masonry('layout');
+  });
 
   // Input Mask
   var inputPhone = document.querySelectorAll('input[type="tel"]');

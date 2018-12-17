@@ -1,0 +1,12 @@
+extends template/main
+
+block variables
+  - var title = 'Категории'
+  - var pageClass = ''
+
+block content
+  include pages/catalog/hero.pug
+  include pages/categories/categories.pug
+  include pages/categories/categories-items.pug
+  include pages/categories/seo-text.pug
+  include modules/online-order/online-order.pug

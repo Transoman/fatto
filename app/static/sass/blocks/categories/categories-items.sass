@@ -1,0 +1,42 @@
+.categories-items
+  padding: 0
+  margin: 0 5px
+  .row
+    margin-left: auto
+    margin-right: auto
+  &__item
+    padding: 0 5px
+    margin-bottom: 10px
+  &__inner
+    position: relative
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      background-color: rgba(#000, 0.6)
+      opacity: 0
+      visibility: hidden
+      +transition
+    &:hover
+      &::before
+        opacity: 1
+        visibility: visible
+      .btn
+        opacity: 1
+        visibility: visible
+    .btn
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      z-index: 1
+      opacity: 0
+      visibility: hidden
+      +transition
+  &__img
+    display: block
+    width: 100%
