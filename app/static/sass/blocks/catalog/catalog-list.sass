@@ -92,9 +92,12 @@
       width: 100%
     &--social
       text-align: center
+      background-color: $accent
+      +transition
       .catalog-list
         &__link
           padding: 8%
+          color: $main-color
           +r(1440)
             padding: 6.8%
           +r(992)
@@ -110,14 +113,16 @@
         white-space: nowrap
         +r(1200)
           font-size: 18px
+      &:hover
+        background-color: lighten($accent, 5%)
       &-inst
-        background-color: $amaranth
+        // background-color: $amaranth
       &-fb
-        background-color: $san-marino
+        // background-color: $san-marino
       &-vk
-        background-color: $san-marino-2
+        // background-color: $san-marino-2
       &-youtube
-        background-color: $red-ribbon
+        // background-color: $red-ribbon
         .catalog-list
           &__link
             padding: 55px 20px
