@@ -1,11 +1,12 @@
 section.product
   .container
     .product__top
-      a(href="#").product__top-link.product__top-link--prev
-        +icon('arrow-small-right', 'product__top-link-icon')
+      a(href="#").link-arrow.link-arrow--left
+        +icon('arrow-small-left', 'link-arrow__icon')
         | Предыдущий образец
-      a(href="#").product__top-link.product__top-link--next Следующий образец
-        +icon('arrow-small-right', 'product__top-link-icon')
+      a(href="#").link-arrow.link-arrow--right
+        | Следующий образец
+        +icon('arrow-small-right', 'link-arrow__icon')
 
     .product__wrap.row
       .col-lg-6
