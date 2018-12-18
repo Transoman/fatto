@@ -1,0 +1,57 @@
+.article
+  padding: 145px 0 230px
+  +r(1200)
+    padding-bottom: 145px
+  +r(767)
+    padding: 50px 0
+  .section-title
+    margin-bottom: 100px
+    font-size: 30px
+    +r(767)
+      margin-bottom: 60px
+    +r(480)
+      font-size: 26px
+  &__content
+    padding: 0 240px
+    +r(1440)
+      padding: 0 120px
+    +r(1200)
+      padding: 0
+    p
+      margin-bottom: 30px
+      &:last-of-type
+        margin-bottom: 0
+    h4
+      font-family: $main-font
+      font-size: 16px
+      font-weight: 700
+      margin-bottom: 20px
+    hr
+      color: rgba($natural-gray, 0.3)
+      background-color: rgba($natural-gray, 0.3)
+      border: none
+      height: 1px
+      clear: both
+      &:last-of-type
+        margin-top: 115px
+        +r(576)
+          margin-top: 80px
+  &__bottom
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-wrap: wrap
+    padding: 50px 240px
+    +r(1440)
+      padding-right: 120px
+      padding-left: 120px
+    +r(1200)
+      padding-right: 0
+      padding-left: 0
+    +r(480)
+      flex-direction: column
+      padding: 30px 0
+      & > *:not(:last-child)
+        margin-bottom: 20px
+      .link-arrow
+        margin-right: 0

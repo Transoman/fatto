@@ -1,0 +1,28 @@
+.link-arrow
+  font-size: 12px
+  font-weight: 500
+  color: $natural-gray
+  text-transform: uppercase
+  vertical-align: middle
+  &__icon
+    +size(42px, 10px)
+    fill: $accent
+    vertical-align: baseline
+    +transition
+  &--left
+    margin-right: 20px
+    &:hover
+      .link-arrow__icon
+        transform: translateX(-10px)
+    .link-arrow__icon
+      margin-right: 30px
+      +r(480)
+        margin-right: 10px
+  &--right
+    &:hover
+      .link-arrow__icon
+        transform: translateX(10px)
+    .link-arrow__icon
+      margin-left: 30px
+      +r(480)
+        margin-left: 10px
