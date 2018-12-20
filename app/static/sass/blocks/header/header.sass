@@ -28,15 +28,22 @@
       align-items: center
   &__nav
     &-one
+      width: 42.5%
       padding-top: 50px
       +transition(1s)
       +r(1024)
         display: none
     &-two
+      display: flex
+      justify-content: flex-end
+      width: 42.5%
       padding-top: 50px
       +transition(1s)
       +r(1024)
         display: none
+  &__logo
+    width: 15%
+    align-items: center
   &.fixed
     padding-top: 40px
     background-color: rgba($main-color, 0.8)
