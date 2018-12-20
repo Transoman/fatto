@@ -145,7 +145,11 @@ jQuery(document).ready(function($) {
     }
   });
 
-  new Swiper('.product-gallery__thumbnails', {
+  var productSlider = new Swiper('.product-gallery__slider', {
+    spaceBetween: 10
+  });
+
+  var productThumbSlider = new Swiper('.product-gallery__thumbnails', {
     slidesPerView: 5,
     spaceBetween: 20,
     navigation: {
@@ -176,26 +180,22 @@ jQuery(document).ready(function($) {
     }
   });
 
-  // Change product image
-  $('.product-gallery__thumbnails img').click(function(){
-    var large = $(this).data('large_image');
-    var medium = $(this).data('medium_image');
-    $('.product-gallery__img img').fadeOut(300, changeImg(medium, large, $('.product-gallery__img img')));
+  $('.product-gallery__thumbnails-item').click(function(e) {
+    var activeIndex = productThumbSlider.clickedIndex;
+    productSlider.slideTo(activeIndex);
   });
 
-  function changeImg(medium, large, element){
-    var element = element;
-    var large = large;
-    var medium = medium;
-    setTimeout(function(){ tdZoomFade()},300);
-    function tdZoomFade(){
-        element.attr('src', medium)
-        element.attr('data-large_image', large)
-        element.attr('data-medium_image', medium)
-        element.parent().attr('href', large)
-        element.fadeIn(300);
+  $().fancybox({
+    selector : '[data-fancybox="group"]',
+    thumbs   : false,
+    hash     : false,
+    loop: true,
+    beforeClose : function(instance) {
+      if ($('.product-gallery__slider').length) {
+        productSlider.slideTo( instance.currIndex);
+      }
     }
-  }
+  });
 
   // Validation form
   jQuery.validator.addMethod("phoneno", function(phone_number, element) {
