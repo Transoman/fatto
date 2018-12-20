@@ -198,10 +198,10 @@ jQuery(document).ready(function($) {
   });
 
   // Partner slider
-  const breakpoint = window.matchMedia( '(min-width: 992px)' );
+  var breakpoint = window.matchMedia( '(min-width: 992px)' );
   var partnerSlider;
 
-  const breakpointChecker = function() {
+  var breakpointChecker = function() {
      // if larger viewport and multi-row layout needed
      if ( breakpoint.matches === true ) {
         // clean up old instances and inline styles when available
@@ -221,7 +221,7 @@ jQuery(document).ready(function($) {
      }
   };
 
-  const enableSwiper = function() {
+  var enableSwiper = function() {
     $('.partners-list').addClass('swiper-container');
     if (! $('.partners-list .swiper-wrapper').length ) {
       $('.partners-list__item').wrapAll('<div class="swiper-wrapper"></div>');
