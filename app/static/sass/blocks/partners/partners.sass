@@ -1,0 +1,29 @@
+.partners-list
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding-top: 70px
+  border-top: 1px solid rgba($natural-gray, 0.3)
+  +r(992)
+    padding-bottom: 20px
+  +r(480)
+    padding-top: 40px
+  .swiper-wrapper
+    align-items: center
+  .swiper-pagination
+    bottom: 0
+    .swiper-pagination-bullet-active
+      background-color: $accent
+  &__item
+    padding: 0 15px
+    text-align: center
+    +r(992)
+      padding: 0
+    img
+      filter: grayscale(1)
+      opacity: 0.5
+      +transition
+    &:hover
+      img
+        filter: grayscale(0)
+        opacity: 1

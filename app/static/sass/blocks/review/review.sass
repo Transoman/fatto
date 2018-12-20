@@ -1,0 +1,31 @@
+.review
+  .section-title
+    margin-bottom: 140px
+    font-size: 36px
+    +r(767)
+      margin-bottom: 50px
+      font-size: 30px
+    +r(480)
+      font-size: 26px
+
+.review-list
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  &__item
+    width: 47.51%
+    margin-bottom: 70px
+    +r(767)
+      width: 100%
+      margin-bottom: 30px
+    .video
+      &__btn
+        +size(58px)
+        &-icon
+          width: 15px
+          height: 20px
+      &__title
+        left: 30px
+        bottom: 25px
+        p
+          font-size: 18px

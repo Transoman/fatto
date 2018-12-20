@@ -197,6 +197,63 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // Partner slider
+  const breakpoint = window.matchMedia( '(min-width: 992px)' );
+  var partnerSlider;
+
+  const breakpointChecker = function() {
+     // if larger viewport and multi-row layout needed
+     if ( breakpoint.matches === true ) {
+        // clean up old instances and inline styles when available
+        if ( partnerSlider !== undefined ) {
+          $('.partners-list').removeClass('swiper-container');
+          $('.partners-list__item').unwrap('.swiper-wrapper');
+          $('.partners-list__item').removeClass('swiper-slide');
+          $('.partners-list .swiper-pagination').remove();
+          partnerSlider.destroy( true, true );
+        }
+        // or/and do nothing
+        return;
+     // else if a small viewport and single column layout needed
+     } else if ( breakpoint.matches === false ) {
+        // fire small viewport version of swiper
+        return enableSwiper();
+     }
+  };
+
+  const enableSwiper = function() {
+    $('.partners-list').addClass('swiper-container');
+    if (! $('.partners-list .swiper-wrapper').length ) {
+      $('.partners-list__item').wrapAll('<div class="swiper-wrapper"></div>');
+    }
+    $('.partners-list__item').addClass('swiper-slide');
+    $('.partners-list').append('<div class="swiper-pagination"></div>');
+
+    partnerSlider = new Swiper ('.partners-list', {
+      slidesPerView: 3,
+      spaceBetween: 15,
+      breakpoints: {
+        767: {
+          slidesPerView: 2,
+          spaceBetween: 10
+        },
+        480: {
+          slidesPerView: 1,
+          spaceBetween: 0
+        }
+      },
+
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  }
+
+  // keep an eye on viewport size changes
+  breakpoint.addListener(breakpointChecker);
+  // kickstart
+  breakpointChecker();
+
   // Validation form
   jQuery.validator.addMethod("phoneno", function(phone_number, element) {
     return this.optional(element) || phone_number.match(/\+[0-9]{1}\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}/);

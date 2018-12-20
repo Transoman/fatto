@@ -1,0 +1,11 @@
+extends template/main
+
+block variables
+  - var title = 'Отзывы'
+  - var pageClass = ''
+
+block content
+  include pages/catalog/hero.pug
+  include pages/review/review.pug
+  include pages/review/partners.pug
+  include modules/online-order/online-order.pug
