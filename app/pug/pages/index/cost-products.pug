@@ -6,7 +6,7 @@ section.cost-products.section-dark
       p Мы всегда предлагаем честную цену на свои изделия, исходя прежде всего из сложности проекта. Т.к. все изделия изготавливаются по индивидуальному проекту, говорить об их точной стоимости можно только после согласования всех материалов, фурнитуры и вида покраски.
     .section-content
        p Ниже приведены некоторые изделия и их стоимость. По ним можно понять порядок цен на изготавливаемую нами мебель.
-  .cost-products__slider.swiper-container
+  .cost-products__slider.swiper-container.slider
     .swiper-wrapper
       .swiper-slide.cost-products__slider-item
         a(href="static/images/content/cost-slider-1.jpg", data-fancybox="group")
@@ -23,6 +23,11 @@ section.cost-products.section-dark
       .swiper-slide.cost-products__slider-item
         a(href="static/images/content/cost-slider-5.jpg", data-fancybox="group")
           img(src="static/images/content/cost-slider-5.jpg", alt="")
+    .slider__btns
+      .swiper-button-prev
+        +icon('arrow-left', 'slider__arrow slider__arrow--left')
+      .swiper-button-next
+        +icon('arrow-right', 'slider__arrow slider__arrow--right')
 
   .container
     .cost-products__info
