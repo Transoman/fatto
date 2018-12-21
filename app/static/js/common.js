@@ -8,13 +8,19 @@ jQuery(document).ready(function($) {
   });
 
   // Fixed header
-  $(window).scroll(function() {
+  function fixedHeader() {
     if($(this).scrollTop() > 50) {
       $('.header').addClass('fixed');
     }
     else {
       $('.header').removeClass('fixed');
     }
+  }
+
+  fixedHeader();
+
+  $(window).scroll(function() {
+    fixedHeader();
   });
 
   // Modal
@@ -195,6 +201,25 @@ jQuery(document).ready(function($) {
         productSlider.slideTo( instance.currIndex);
       }
     }
+  });
+
+  // Open map in popup
+  $('#contact-map').popup({
+    opacity: 0.3,
+    transition: 'all 0.3s'
+  });
+
+  $('.contact-list__map-link').click(function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: 'get',
+      url: 'map.php',
+      data: {lng: $(this).data('lng'), lat: $(this).data('lat')},
+      success: function(res) {
+        $('#contact-map').html(res);
+        $('#contact-map').popup('show');
+      }
+    });
   });
 
   // Partner slider

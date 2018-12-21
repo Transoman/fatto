@@ -82,3 +82,34 @@
       +r(992)
         +size(80px)
         margin-right: 20px
+
+.contact-map
+  width: 80%
+  height: 80%
+  &_close
+    position: absolute
+    top: 0
+    right: -25px
+    +size(25px)
+    background-color: #fff
+    z-index: 1
+    cursor: pointer
+    &::before, &::after
+      content: ''
+      position: absolute
+      top: 12px
+      left: 1px
+      display: block
+      height: 2px
+      width: 90%
+      background-color: $main-color
+    &::before
+      transform: rotate(45deg)
+    &::after
+      transform: rotate(-45deg)
+  +r(480)
+    height: 100%
+
+#map
+  width: 100%
+  height: 100%

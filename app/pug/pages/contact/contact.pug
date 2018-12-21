@@ -8,7 +8,7 @@ section.contact
           img(src="static/images/content/contact-1.jpg", alt="")
           a(href="static/images/content/contact-1.jpg", data-fancybox).contact-list__img-zoom
             +icon('zoom', 'contact-list__img-zoom-icon')
-        a(href="#").contact-list__map-link
+        a(href="#", data-lng="53.902473", data-lat="27.550103").contact-list__map-link
           +icon('placeholder', 'contact-list__map-icon')
           | Посмотреть на карте
         .contact-list__row.contact-list__row--address
@@ -31,7 +31,7 @@ section.contact
           img(src="static/images/content/contact-2.jpg", alt="")
           a(href="static/images/content/contact-2.jpg", data-fancybox).contact-list__img-zoom
             +icon('zoom', 'contact-list__img-zoom-icon')
-        a(href="#").contact-list__map-link
+        a(href="#", data-lng="55.817349", data-lat="37.387562").contact-list__map-link
           +icon('placeholder', 'contact-list__map-icon')
           | Посмотреть на карте
         .contact-list__row.contact-list__row--address
@@ -48,3 +48,7 @@ section.contact
             .contact-list__person-img
               img(src="static/images/content/contact-person-2.jpg", alt="")
             p.contact-list__person-text <strong>Олеся</strong>, руководитель салона
+
+script(src="//api-maps.yandex.ru/2.1/?lang=ru_RU", defer)
+
+.contact-map#contact-map(style="display: none")
