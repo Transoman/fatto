@@ -1,0 +1,10 @@
+extends template/main
+
+block variables
+  - var title = 'Контакты'
+  - var pageClass = ''
+
+block content
+  include pages/catalog/hero.pug
+  include pages/contact/contact.pug
+  include modules/online-order/online-order.pug

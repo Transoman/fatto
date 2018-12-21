@@ -1,0 +1,84 @@
+.contact
+  padding-bottom: 130px
+  +r(767)
+    padding-bottom: 50px
+
+.contact-list
+  &__item
+    display: flex
+    flex-direction: column
+    margin-bottom: 50px
+  &__img
+    &-wrap
+      position: relative
+      max-height: 320px
+      margin-bottom: 20px
+      overflow: hidden
+      img
+        display: block
+        width: 100%
+    &-zoom
+      position: absolute
+      right: 10px
+      bottom: 10px
+      display: flex
+      align-items: center
+      justify-content: center
+      +size(50px)
+      background-color: $accent
+      border-radius: 50%
+      +transition
+      &:hover
+        background-color: lighten($accent, 5%)
+      &-icon
+        +size(20px)
+        fill: #fff
+  &__map
+    &-link
+      display: flex
+      align-items: center
+      margin-bottom: 40px
+      font-size: 13px
+      color: $natural-gray
+    &-icon
+      +size(18px)
+      fill: $accent
+      margin-right: 10px
+  &__row
+    margin-bottom: 25px
+    p
+      font-weight: 500
+    &--schedule
+      margin-bottom: 40px
+    &--phone
+      margin-bottom: 45px
+  &__label
+    display: block
+    margin-bottom: 10px
+    color: $natural-gray
+  &__phone
+    font-size: 18px
+    font-weight: 500
+    color: $cod-gray-4
+  &__email
+    font-weight: 500
+    color: $accent
+    line-height: 2
+    &:hover
+      text-decoration: underline
+  &__bottom
+    margin-top: auto
+    padding: 20px 0
+    border-top: 1px solid rgba($natural-gray, 0.3)
+  &__person
+    display: flex
+    align-items: center
+    &-img
+      flex-shrink: 0
+      +size(100px)
+      margin-right: 40px
+      border-radius: 50%
+      overflow: hidden
+      +r(992)
+        +size(80px)
+        margin-right: 20px
