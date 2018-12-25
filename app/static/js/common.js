@@ -231,11 +231,13 @@ jQuery(document).ready(function($) {
      if ( breakpoint.matches === true ) {
         // clean up old instances and inline styles when available
         if ( partnerSlider !== undefined ) {
-          $('.partners-list').removeClass('swiper-container');
-          $('.partners-list__item').unwrap('.swiper-wrapper');
-          $('.partners-list__item').removeClass('swiper-slide');
-          $('.partners-list .swiper-pagination').remove();
-          partnerSlider.destroy( true, true );
+          if ($('.partners-list').length) {
+            $('.partners-list').removeClass('swiper-container');
+            $('.partners-list__item').unwrap('.swiper-wrapper');
+            $('.partners-list__item').removeClass('swiper-slide');
+            $('.partners-list .swiper-pagination').remove();
+            partnerSlider.destroy( true, true );
+          }
         }
         // or/and do nothing
         return;
