@@ -7,6 +7,9 @@
     padding-bottom: 50px
   .section-title
     margin-bottom: 120px
+    text-align: center
+    +r(767)
+      text-align: left
     +r(576)
       margin-bottom: 40px
   &__list
@@ -18,6 +21,7 @@
     &-inner
       position: relative
       padding-top: 120px
+      text-align: center
       +r(576)
         padding-top: 105px
       p
@@ -27,7 +31,8 @@
     &-icon
       position: absolute
       top: 0
-      left: 0
+      left: 50%
+      transform: translateX(-50%)
       +size(70px, 80px)
       fill: $accent
   &__address

@@ -10,6 +10,7 @@
   &__inner
     position: relative
     z-index: 1
+    overflow: hidden
     &::before
       content: ''
       position: absolute
@@ -21,6 +22,7 @@
       opacity: 0
       visibility: hidden
       +transition
+      z-index: 1
     &:hover
       &::before
         opacity: 1
@@ -28,6 +30,8 @@
       .btn
         opacity: 1
         visibility: visible
+      .categories-items__img
+        transform: scale(1.1)
     .btn
       position: absolute
       top: 50%
@@ -43,3 +47,4 @@
   &__img
     display: block
     width: 100%
+    +transition(1.5s)
