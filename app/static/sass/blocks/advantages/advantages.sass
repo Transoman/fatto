@@ -40,31 +40,36 @@
       display: flex
       flex-direction: column
       margin-bottom: 50px
-    &-img-wrap
-      position: relative
-      max-height: 320px
-      margin-bottom: 45px
-      overflow: hidden
-      +r(992)
-        margin-bottom: 30px
-      &::before
-        content: ''
-        position: absolute
-        top: 0
-        right: 0
-        bottom: 0
-        left: 0
-        background-color: rgba($cod-gray-2, 0.7)
-        +transition
-        opacity: 0
-        visibility: hidden
+      &:hover
+        .advantages__address-img-link
+          &::before
+            opacity: 1
+            visibility: visible
+    &-img
+      &-wrap
+        position: relative
+        max-height: 320px
+        margin-bottom: 45px
+        overflow: hidden
+        +r(992)
+          margin-bottom: 30px
+      &-link
+        display: block
+        position: relative
+        &::before
+          content: ''
+          position: absolute
+          top: 0
+          right: 0
+          bottom: 0
+          left: 0
+          background-color: rgba($cod-gray-2, 0.7)
+          +transition
+          opacity: 0
+          visibility: hidden
       img
         display: block
         width: 100%
-      &:hover
-        &::before
-          opacity: 1
-          visibility: visible
     &-content
       display: flex
       flex-direction: column
