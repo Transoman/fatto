@@ -74,9 +74,26 @@ jQuery(document).ready(function($) {
   // Masonry
   var grid = $('.categories-items .row').masonry({
     itemSelector: '.categories-items__item',
-    columnWidth: '.categories-items__item:last-child',
-    percentPosition: true
+    columnWidth: '.categories-items__item:last-child'
   });
+
+  function masonryProjectResize() {
+    if($('.categories-items').length) {
+      var defaultSize = $('.categories-items__item:last-child').width();
+      var projectDefault = $('.categories-items__item');
+      var projectMasonryTall = $('.categories-items__item--tall');
+      
+      projectDefault.css('height', defaultSize);
+      projectMasonryTall.css('height', defaultSize*2);
+    }
+  }
+
+  masonryProjectResize();
+
+  $(window).resize(function() {
+    masonryProjectResize();
+  });
+  
 
   grid.imagesLoaded().progress( function() {
     grid.masonry('layout');
