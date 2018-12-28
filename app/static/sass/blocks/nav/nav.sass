@@ -6,6 +6,11 @@
   li
     position: relative
     margin-right: 40px
+    &.current-menu-item
+      a
+        color: $accent
+      &::after
+        width: 100%
     &::after
       content: ''
       position: absolute

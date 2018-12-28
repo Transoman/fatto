@@ -113,13 +113,17 @@ jQuery(document).ready(function($) {
   }
 
   new Swiper('.slider--about', {
-    slidesPerView: 2,
+    slidesPerView: 3,
     spaceBetween: 30,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
     breakpoints: {
+      1200: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },
       767: {
         slidesPerView: 1,
         spaceBetween: 30
@@ -128,13 +132,17 @@ jQuery(document).ready(function($) {
   });
 
   new Swiper('.slider--project', {
-    slidesPerView: 2,
+    slidesPerView: 3,
     spaceBetween: 30,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
     breakpoints: {
+      1200: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },
       767: {
         slidesPerView: 1,
         spaceBetween: 30
