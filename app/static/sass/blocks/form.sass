@@ -20,7 +20,9 @@
     +transition
     &--textarea
       resize: none
-      min-height: 120px
+      height: 120px
+      padding-top: 0
+      margin-top: 15px
     &:focus
       background-size: 100% 1px
       outline: none
@@ -50,6 +52,13 @@
       margin: 0
       padding: 27px
       background-color: $cod-gray-3
+      span
+        display: inline-block
+        vertical-align: middle
+        max-width: 153px
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
       +r(1200)
         padding-right: 30px
         padding-left: 30px
@@ -99,10 +108,13 @@
       margin-right: 30px
   &__btn
     width: 100%
-  label.error
+  .wpcf7-not-valid-tip
     position: absolute
     top: calc(100% + 5px)
     left: 0
     font-size: 12px
     font-weight: 300
     color: $accent
+
+.wpcf7-form-control-wrap
+  position: static

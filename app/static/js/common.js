@@ -62,12 +62,12 @@ jQuery(document).ready(function($) {
 
   // Focus input effect
   $('.form__field').focus(function() {
-    $(this).prev('.form__label').addClass('is-active');
+    $(this).parent().prev('.form__label').addClass('is-active');
   });
 
   $('.form__field, .form__field--textarea').focusout(function() {
     if ($(this).val() == '') {
-      $(this).prev('.form__label').removeClass('is-active');
+      $(this).parent().prev('.form__label').removeClass('is-active');
     }
   });
 
@@ -238,7 +238,7 @@ jQuery(document).ready(function($) {
     e.preventDefault();
     $.ajax({
       type: 'get',
-      url: 'map.php',
+      url: '/wp-content/themes/fatto/map.php',
       data: {lng: $(this).data('lng'), lat: $(this).data('lat')},
       success: function(res) {
         $('#contact-map').html(res);
@@ -306,83 +306,38 @@ jQuery(document).ready(function($) {
   // kickstart
   breakpointChecker();
 
-  // Validation form
-  jQuery.validator.addMethod("phoneno", function(phone_number, element) {
-    return this.optional(element) || phone_number.match(/\+[0-9]{1}\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}/);
-  }, "Введите Ваш телефон");
+  // Form
+  var requiredField = $('.wpcf7-form .wpcf7-validates-as-required');
 
-  $.extend( $.validator.messages, {
-    required: "Это поле необходимо заполнить",
-    remote: "Пожалуйста, введите правильное значение.",
-    email: "Пожалуйста, введите корректный адрес электронной почты.",
-    url: "Пожалуйста, введите корректный URL.",
-    date: "Пожалуйста, введите корректную дату.",
-    dateISO: "Пожалуйста, введите корректную дату в формате ISO.",
-    number: "Пожалуйста, введите число.",
-    digits: "Пожалуйста, вводите только цифры.",
-    creditcard: "Пожалуйста, введите правильный номер кредитной карты.",
-    equalTo: "Пожалуйста, введите такое же значение ещё раз.",
-    extension: "Пожалуйста, выберите файл с правильным расширением.",
-    maxlength: $.validator.format( "Пожалуйста, введите не больше {0} символов." ),
-    minlength: $.validator.format( "Пожалуйста, введите не меньше {0} символов." ),
-    rangelength: $.validator.format( "Пожалуйста, введите значение длиной от {0} до {1} символов." ),
-    range: $.validator.format( "Пожалуйста, введите число от {0} до {1}." ),
-    max: $.validator.format( "Пожалуйста, введите число, меньшее или равное {0}." ),
-    min: $.validator.format( "Пожалуйста, введите число, большее или равное {0}." )
-  } );
-  
-  /* Валидация формы */
-  $(".online-order__form").validate({
-    messages: {
-      name: "Введите Ваше имя",
-      phone: "Введите Ваш телефон",
-      email: "Введите Ваш E-mail",
-      address: "Введите Ваш адрес доставки",
-      desc: "Введите Ваше описание",
-      validate_code: "Введите Проверочный код",
-    },
-    rules: {
-      "phone": {
-        required: true,
-        phoneno: true
-      }
-    },
-    submitHandler: function(form) {
-      var t = $('.online-order__form').serialize();
-      ajaxSend('.online-order__form', t);
-    }
+  requiredField.each(function(i, el) {
+    $(el).attr('required', true);
   });
 
-  $(".download__form").validate({
-    messages: {
-      email: "Введите Ваш E-mail",
-    },
-    rules: {
-      "phone": {
-        required: true,
-        phoneno: true
-      }
-    },
-    submitHandler: function(form) {
-      var t = $('.download__form').serialize();
-      ajaxSend('.download__form', t);
-    }
-  });
-  
-  /* Функцыя для отправки формы */
-  function ajaxSend(formName, data) {
-    jQuery.ajax({
-      type: "POST",
-      url: "sendmail.php",
-      data: data,
-      success: function() {
-        $(".modal").popup("hide");
-        $("#thanks").popup("show");
-        setTimeout(function() {
-          $(formName).trigger('reset');
-        }, 2000);
-      }
-    });
+  var wpcf7Elm = document.querySelector( '.wpcf7' );
+ 
+  if (wpcf7Elm) {
+    wpcf7Elm.addEventListener( 'wpcf7submit', function( event ) {
+      $('.wpcf7-form-control').each(function(i, el) {
+        $(this).parent().prev('.form__label').removeClass('is-active');
+      });
+      $('label[for="order-file"] span').text('Прикрепить файл');
+    }, false );
   }
+
+
+  $('#btn-price').click(function() {
+    var title = $(this).parents('.product__content').find('h1').text();
+    $('.online-order__form').find('input[name="subject"]').val('Узнать стоимость под необходимые размеры: ' + title);
+  });
+
+  $('#btn-order').click(function() {
+    var title = $(this).parents('.product__content').find('h1').text();
+    $('.online-order__form').find('input[name="subject"]').val('Заявка на заказ: ' + title);
+  });
+
+  $('#order-file').change(function() {
+    var filename = $(this).val().replace(/.*\\/, "");
+    $('label[for="order-file"] span').text(filename);
+  });
 
 });
