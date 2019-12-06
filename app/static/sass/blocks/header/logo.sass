@@ -2,15 +2,18 @@
   display: flex
   flex-direction: column
   flex-shrink: 0
-  &__top
-    height: 115px
-    margin-bottom: 10px
-    +transition(1s)
-    +r(1024)
-      height: 67px
-      margin-bottom: 5px
-  &__bottom
-    +transition
+  +transition
   +r(1024)
     margin: 0
     width: 70px
+  &__top
+    height: 45px
+    +transition(1s)
+    +r(1024)
+      width: 30px
+      height: 22px
+  &__bottom
+    margin-top: 10px
+    +transition
+    +r(1024)
+      margin-top: 5px
